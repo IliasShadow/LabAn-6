@@ -3,7 +3,7 @@
 using namespace std;
 
 class Pizza {
-private:
+protected:
     string Name;
     string Description;
     unsigned int Size;
@@ -17,35 +17,29 @@ public:
         unsigned int Count;
         cout << "Введите количество соли: ";
         cin >> Count;
-        add_salt(Count);
-    }
-    void add_salt(unsigned int Count) {
         salt = Count;
         Prise += 2*Count;
+
     }
     void Cheese() {
         unsigned int Count;
         cout << "Введите количество сыра: ";
         cin >> Count;
-        add_cheese(Count);
-    }
-    void add_cheese(unsigned int Count) {
         cheese = Count;
         Prise  += 5*Count;
     }
-    virtual unsigned int Size_prise() {
+    unsigned int Size_prise(){
         switch (Size) {
         case 25:
-            Prise += 0;
             break;
         case 30:
-            Prise += 50;
+            Prise+=50;
             break;
         case 35:
-            Prise += 75;
+            Prise+=75;
             break;
         case 40:
-            Prise += 100;
+            Prise+=100;
             break;
         default:
             Prise=0;
@@ -53,7 +47,8 @@ public:
             break;
         }
         return Prise;
-    }
+    };
+
     void Print_Pizza() {
         cout << "Название: " << Name << endl;
         cout << "Описание: " << Description << endl;
@@ -63,11 +58,12 @@ public:
         cout << "Цена: " << Size_prise() << " руб." << endl;
     }
     int get_Prise(){return Prise;};
+    void set_Prise(int p){Prise+=p;}
 };
 
 class Margarita: public Pizza {
 public:
-    Margarita(unsigned int Size): Pizza("Пицца Маргарита", "Нежное тесто, томатный соус, сыр моцарелла и ароматные прованские травы", Size, 389) {}
+    Margarita(unsigned int Size): Pizza("Пицца Маргарита", "Сыр моцарелла, сыр фетакса, красный соус на нежном тесте", Size, 389) {}
 };
 class Four_seasons: public Pizza {
 public:
@@ -75,19 +71,19 @@ public:
 };
 class Pepperoni: public Pizza {
 public:
-    Pepperoni(unsigned int Size): Pizza("Пицца Пепперони", "Салями пепперони, томаты, сыр моцарелла", Size, 539) {}
-};
+    Pepperoni(unsigned int Size): Pizza("Пицца Пепперони", "Салями пепперони в сочетании с ориганальным красным соусом", Size, 569) {}
+    };
 class Hawaiian: public Pizza {
 public:
-    Hawaiian(unsigned int Size): Pizza("Пицца Гавайская", "Сочетание нежной ветчины с кусочками ананаса и сыром моцарелла на томатном соусе", Size, 489) {}
+    Hawaiian(unsigned int Size): Pizza("Пицца Гавайская", "Сочетание нежной ветчины с кусочками ананаса и сыром моцарелла на томатном соусе", Size, 499) {}
 };
 class Mushroom: public Pizza {
 public:
-    Mushroom(unsigned int Size): Pizza("Пицца Грибная", "Моцарелла, шампиньоны, соус красный ", Size, 529) {}
+    Mushroom(unsigned int Size): Pizza("Пицца Грибная", "Моцарелла, шампиньоны, соус красный ", Size, 519) {}
 };
 class Four_cheeses: public Pizza {
 public:
-    Four_cheeses(unsigned int size): Pizza("Пицца Четыре сыра", "Оригинальное сочетание сыров на томатном соусе: моцарелла, пармезан, горгонзола, маасдам и ароматные специи", size, 539) {}
+    Four_cheeses(unsigned int size): Pizza("Пицца Четыре сыра", "Чувственное сочетание сыров на томатном соусе: моцарелла, пармезан, горгонзола, мраморный сыр и сыр с голубой плесенью", size, 559) {}
 };
 class Order {
 public:
@@ -96,7 +92,7 @@ public:
         pizzas.push_back(pizza);
     }
     void Menu() {
-        cout<< "Вот Ваше меню:" << endl;
+        cout<< "Ваше меню:" << endl;
         cout<< "1 - Пицца Маргарита" << endl;
         cout<< "2 - Пицца Четыре сезона" << endl;
         cout<< "3 - Пицца Пепперони" << endl;
@@ -164,7 +160,7 @@ int main() {
         if (n) select->Cheese();
         order.Add(*select);
         delete select;
-        cout<<"Введите 1, если хотите продожить заказ, иначе 0" << endl;
+        cout<<"Введите 1, если хотите добавить ещё одну пиццу в заказ, иначе 0" << endl;
         cin>> cont;
     } while (cont);
     order.Print_order();
