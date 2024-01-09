@@ -15,7 +15,7 @@ public:
 
     void Salt() {
         unsigned int Count;
-        cout << "Ââåäèòå êîëè÷åñòâî ñîëè: ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ¾Ð»Ð¸: ";
         cin >> Count;
         add_salt(Count);
     }
@@ -25,7 +25,7 @@ public:
     }
     void Cheese() {
         unsigned int Count;
-        cout << "Ââåäèòå êîëè÷åñòâî ñûðà: ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‹Ñ€Ð°: ";
         cin >> Count;
         add_cheese(Count);
     }
@@ -49,45 +49,45 @@ public:
             break;
         default:
             Prise=0;
-            cout<<"Ïèöö òàêîãî äèàìåòðà â àññîðòèìåíòå íåò - ";
+            cout<<"ÐŸÐ¸Ñ†Ñ† Ñ‚Ð°ÐºÐ¾Ð³Ð¾ Ð´Ð¸Ð°Ð¼ÐµÑ‚Ñ€Ð° Ð² Ð°ÑÑÐ¾Ñ€Ñ‚Ð¸Ð¼ÐµÐ½Ñ‚Ðµ Ð½ÐµÑ‚ - ";
             break;
         }
         return Prise;
     }
     void Print_Pizza() {
-        cout << "Íàçâàíèå: " << Name << endl;
-        cout << "Îïèñàíèå: " << Description << endl;
-        cout << "Ðàçìåð: " << Size << " ñì" << endl;
-        cout << "Ñîëü: " << salt << endl;
-        cout << "Ñûð: " << cheese << endl;
-        cout << "Öåíà: " << Size_prise() << " ðóá." << endl;
+        cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ: " << Name << endl;
+        cout << "ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ: " << Description << endl;
+        cout << "Ð Ð°Ð·Ð¼ÐµÑ€: " << Size << " ÑÐ¼" << endl;
+        cout << "Ð¡Ð¾Ð»ÑŒ: " << salt << endl;
+        cout << "Ð¡Ñ‹Ñ€: " << cheese << endl;
+        cout << "Ð¦ÐµÐ½Ð°: " << Size_prise() << " Ñ€ÑƒÐ±." << endl;
     }
     int get_Prise(){return Prise;};
 };
 
 class Margarita: public Pizza {
 public:
-    Margarita(unsigned int Size): Pizza("Ïèööà Ìàðãàðèòà", "Íåæíîå òåñòî, òîìàòíûé ñîóñ, ñûð ìîöàðåëëà è àðîìàòíûå ïðîâàíñêèå òðàâû", Size, 389) {}
+    Margarita(unsigned int Size): Pizza("ÐŸÐ¸Ñ†Ñ†Ð° ÐœÐ°Ñ€Ð³Ð°Ñ€Ð¸Ñ‚Ð°", "ÐÐµÐ¶Ð½Ð¾Ðµ Ñ‚ÐµÑÑ‚Ð¾, Ñ‚Ð¾Ð¼Ð°Ñ‚Ð½Ñ‹Ð¹ ÑÐ¾ÑƒÑ, ÑÑ‹Ñ€ Ð¼Ð¾Ñ†Ð°Ñ€ÐµÐ»Ð»Ð° Ð¸ Ð°Ñ€Ð¾Ð¼Ð°Ñ‚Ð½Ñ‹Ðµ Ð¿Ñ€Ð¾Ð²Ð°Ð½ÑÐºÐ¸Ðµ Ñ‚Ñ€Ð°Ð²Ñ‹", Size, 389) {}
 };
 class Four_seasons: public Pizza {
 public:
-    Four_seasons(unsigned int Size): Pizza("Ïèööà ×åòûðå ñåçîíà", "×åòûðå àðîìàòíûé êóñî÷êà ñ ðàçíûìè ìÿñíûìè íà÷èíêàìè", Size, 539) {}
+    Four_seasons(unsigned int Size): Pizza("ÐŸÐ¸Ñ†Ñ†Ð° Ð§ÐµÑ‚Ñ‹Ñ€Ðµ ÑÐµÐ·Ð¾Ð½Ð°", "Ð§ÐµÑ‚Ñ‹Ñ€Ðµ Ð°Ñ€Ð¾Ð¼Ð°Ñ‚Ð½Ñ‹Ð¹ ÐºÑƒÑÐ¾Ñ‡ÐºÐ° Ñ Ñ€Ð°Ð·Ð½Ñ‹Ð¼Ð¸ Ð¼ÑÑÐ½Ñ‹Ð¼Ð¸ Ð½Ð°Ñ‡Ð¸Ð½ÐºÐ°Ð¼Ð¸", Size, 539) {}
 };
 class Pepperoni: public Pizza {
 public:
-    Pepperoni(unsigned int Size): Pizza("Ïèööà Ïåïïåðîíè", "Ñàëÿìè ïåïïåðîíè, òîìàòû, ñûð ìîöàðåëëà", Size, 539) {}
+    Pepperoni(unsigned int Size): Pizza("ÐŸÐ¸Ñ†Ñ†Ð° ÐŸÐµÐ¿Ð¿ÐµÑ€Ð¾Ð½Ð¸", "Ð¡Ð°Ð»ÑÐ¼Ð¸ Ð¿ÐµÐ¿Ð¿ÐµÑ€Ð¾Ð½Ð¸, Ñ‚Ð¾Ð¼Ð°Ñ‚Ñ‹, ÑÑ‹Ñ€ Ð¼Ð¾Ñ†Ð°Ñ€ÐµÐ»Ð»Ð°", Size, 539) {}
 };
 class Hawaiian: public Pizza {
 public:
-    Hawaiian(unsigned int Size): Pizza("Ïèööà Ãàâàéñêàÿ", "Ñî÷åòàíèå íåæíîé âåò÷èíû ñ êóñî÷êàìè àíàíàñà è ñûðîì ìîöàðåëëà íà òîìàòíîì ñîóñå", Size, 489) {}
+    Hawaiian(unsigned int Size): Pizza("ÐŸÐ¸Ñ†Ñ†Ð° Ð“Ð°Ð²Ð°Ð¹ÑÐºÐ°Ñ", "Ð¡Ð¾Ñ‡ÐµÑ‚Ð°Ð½Ð¸Ðµ Ð½ÐµÐ¶Ð½Ð¾Ð¹ Ð²ÐµÑ‚Ñ‡Ð¸Ð½Ñ‹ Ñ ÐºÑƒÑÐ¾Ñ‡ÐºÐ°Ð¼Ð¸ Ð°Ð½Ð°Ð½Ð°ÑÐ° Ð¸ ÑÑ‹Ñ€Ð¾Ð¼ Ð¼Ð¾Ñ†Ð°Ñ€ÐµÐ»Ð»Ð° Ð½Ð° Ñ‚Ð¾Ð¼Ð°Ñ‚Ð½Ð¾Ð¼ ÑÐ¾ÑƒÑÐµ", Size, 489) {}
 };
 class Mushroom: public Pizza {
 public:
-    Mushroom(unsigned int Size): Pizza("Ïèööà Ãðèáíàÿ", "Ìîöàðåëëà, øàìïèíüîíû, ñîóñ êðàñíûé ", Size, 529) {}
+    Mushroom(unsigned int Size): Pizza("ÐŸÐ¸Ñ†Ñ†Ð° Ð“Ñ€Ð¸Ð±Ð½Ð°Ñ", "ÐœÐ¾Ñ†Ð°Ñ€ÐµÐ»Ð»Ð°, ÑˆÐ°Ð¼Ð¿Ð¸Ð½ÑŒÐ¾Ð½Ñ‹, ÑÐ¾ÑƒÑ ÐºÑ€Ð°ÑÐ½Ñ‹Ð¹ ", Size, 529) {}
 };
 class Four_cheeses: public Pizza {
 public:
-    Four_cheeses(unsigned int size): Pizza("Ïèööà ×åòûðå ñûðà", "Îðèãèíàëüíîå ñî÷åòàíèå ñûðîâ íà òîìàòíîì ñîóñå: ìîöàðåëëà, ïàðìåçàí, ãîðãîíçîëà, ìààñäàì è àðîìàòíûå ñïåöèè", size, 539) {}
+    Four_cheeses(unsigned int size): Pizza("ÐŸÐ¸Ñ†Ñ†Ð° Ð§ÐµÑ‚Ñ‹Ñ€Ðµ ÑÑ‹Ñ€Ð°", "ÐžÑ€Ð¸Ð³Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ ÑÐ¾Ñ‡ÐµÑ‚Ð°Ð½Ð¸Ðµ ÑÑ‹Ñ€Ð¾Ð² Ð½Ð° Ñ‚Ð¾Ð¼Ð°Ñ‚Ð½Ð¾Ð¼ ÑÐ¾ÑƒÑÐµ: Ð¼Ð¾Ñ†Ð°Ñ€ÐµÐ»Ð»Ð°, Ð¿Ð°Ñ€Ð¼ÐµÐ·Ð°Ð½, Ð³Ð¾Ñ€Ð³Ð¾Ð½Ð·Ð¾Ð»Ð°, Ð¼Ð°Ð°ÑÐ´Ð°Ð¼ Ð¸ Ð°Ñ€Ð¾Ð¼Ð°Ñ‚Ð½Ñ‹Ðµ ÑÐ¿ÐµÑ†Ð¸Ð¸", size, 539) {}
 };
 class Order {
 public:
@@ -96,23 +96,23 @@ public:
         pizzas.push_back(pizza);
     }
     void Menu() {
-        cout<< "Âîò Âàøå ìåíþ:" << endl;
-        cout<< "1 - Ïèööà Ìàðãàðèòà" << endl;
-        cout<< "2 - Ïèööà ×åòûðå ñåçîíà" << endl;
-        cout<< "3 - Ïèööà Ïåïïåðîíè" << endl;
-        cout<< "4 - Ïèööà Ãàâàéñêàÿ" << endl;
-        cout<< "5 - Ïèööà Ãðèáíàÿ" << endl;
-        cout<< "6 - Ïèööà ×åòûðå ñûðà" << endl;
+        cout<< "Ð’Ð¾Ñ‚ Ð’Ð°ÑˆÐµ Ð¼ÐµÐ½ÑŽ:" << endl;
+        cout<< "1 - ÐŸÐ¸Ñ†Ñ†Ð° ÐœÐ°Ñ€Ð³Ð°Ñ€Ð¸Ñ‚Ð°" << endl;
+        cout<< "2 - ÐŸÐ¸Ñ†Ñ†Ð° Ð§ÐµÑ‚Ñ‹Ñ€Ðµ ÑÐµÐ·Ð¾Ð½Ð°" << endl;
+        cout<< "3 - ÐŸÐ¸Ñ†Ñ†Ð° ÐŸÐµÐ¿Ð¿ÐµÑ€Ð¾Ð½Ð¸" << endl;
+        cout<< "4 - ÐŸÐ¸Ñ†Ñ†Ð° Ð“Ð°Ð²Ð°Ð¹ÑÐºÐ°Ñ" << endl;
+        cout<< "5 - ÐŸÐ¸Ñ†Ñ†Ð° Ð“Ñ€Ð¸Ð±Ð½Ð°Ñ" << endl;
+        cout<< "6 - ÐŸÐ¸Ñ†Ñ†Ð° Ð§ÐµÑ‚Ñ‹Ñ€Ðµ ÑÑ‹Ñ€Ð°" << endl;
         cout << endl;
     }
     void Print_order() {
-        cout << "Âàø çàêàçà:"<< endl;
+        cout << "Ð’Ð°Ñˆ Ð·Ð°ÐºÐ°Ð·Ð°:"<< endl;
         int price = 0;
         for (Pizza pizza : pizzas) {
             pizza.Print_Pizza();
             price += pizza.get_Prise();
         }
-        cout << "Èòîãî: " << price << " ðóáëåé" << endl;
+        cout << "Ð˜Ñ‚Ð¾Ð³Ð¾: " << price << " Ñ€ÑƒÐ±Ð»ÐµÐ¹" << endl;
     }
 };
 
@@ -124,13 +124,13 @@ int main() {
     bool cont = 1;
     unsigned int Size;
     Pizza* select;
-    cout << "Ðàäû ïðèâåòñòâîâàòü Âàñ â íàøåé ïèööåðèè"<< endl;
+    cout << "Ð Ð°Ð´Ñ‹ Ð¿Ñ€Ð¸Ð²ÐµÑ‚ÑÑ‚Ð²Ð¾Ð²Ð°Ñ‚ÑŒ Ð’Ð°Ñ Ð² Ð½Ð°ÑˆÐµÐ¹ Ð¿Ð¸Ñ†Ñ†ÐµÑ€Ð¸Ð¸"<< endl;
     do
     {
         order.Menu();
-        cout<< "Ââåäèòå íîìåð ïèööû:  "<< endl;
+        cout<< "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¿Ð¸Ñ†Ñ†Ñ‹:  "<< endl;
         cin >> pizza;
-        cout << "Ââåäèòå ðàçìåð ïèööû (25, 30, 35, 40): ";
+        cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¿Ð¸Ñ†Ñ†Ñ‹ (25, 30, 35, 40): ";
         cin >> Size;
         switch (pizza) {
         case 1:
@@ -152,19 +152,19 @@ int main() {
             select = new Four_cheeses(Size);
             break;
         default:
-            cout << "Âû íåïðàâèëüíî ââåëè íîìåð. Ïîïðîáóéòå ñíîâà" << endl << endl;
+            cout << "Ð’Ñ‹ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾ Ð²Ð²ÐµÐ»Ð¸ Ð½Ð¾Ð¼ÐµÑ€. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ½Ð¾Ð²Ð°" << endl << endl;
             continue;
         }
         n=false;
-        cout << "Õîòèòå ïîäñîëèòü ïèööó(0-íåò,1-äà)? " << endl;
+        cout << "Ð¥Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ð¾Ð´ÑÐ¾Ð»Ð¸Ñ‚ÑŒ Ð¿Ð¸Ñ†Ñ†Ñƒ(0-Ð½ÐµÑ‚,1-Ð´Ð°)? " << endl;
         cin >> n;
         if (n) select->Salt();
-        cout << "Õîòèòå äîáàâèòü ñûðà (0-íåò,1-äà)? " << endl;
+        cout << "Ð¥Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÑ‹Ñ€Ð° (0-Ð½ÐµÑ‚,1-Ð´Ð°)? " << endl;
         cin >> n;
         if (n) select->Cheese();
         order.Add(*select);
         delete select;
-        cout<<"Ââåäèòå 1, åñëè õîòèòå ïðîäîæèòü çàêàç, èíà÷å 0" << endl;
+        cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1, ÐµÑÐ»Ð¸ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð´Ð¾Ð¶Ð¸Ñ‚ÑŒ Ð·Ð°ÐºÐ°Ð·, Ð¸Ð½Ð°Ñ‡Ðµ 0" << endl;
         cin>> cont;
     } while (cont);
     order.Print_order();
