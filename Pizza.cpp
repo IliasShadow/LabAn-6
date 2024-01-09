@@ -58,24 +58,28 @@ public:
         cout << "Цена: " << Size_prise() << " руб." << endl;
     }
     int get_Prise(){return Prise;};
-    void set_Prise(int p){Prise+=p;}
+    void Tasty_Pizza(bool i) {cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;}
 };
 
 class Margarita: public Pizza {
 public:
     Margarita(unsigned int Size): Pizza("Пицца Маргарита", "Сыр моцарелла, сыр фетакса, красный соус на нежном тесте", Size, 389) {}
+
 };
 class Four_seasons: public Pizza {
 public:
     Four_seasons(unsigned int Size): Pizza("Пицца Четыре сезона", "Четыре ароматный кусочка с разными мясными начинками", Size, 539) {}
+
 };
 class Pepperoni: public Pizza {
 public:
     Pepperoni(unsigned int Size): Pizza("Пицца Пепперони", "Салями пепперони в сочетании с ориганальным красным соусом", Size, 569) {}
+
     };
 class Hawaiian: public Pizza {
 public:
     Hawaiian(unsigned int Size): Pizza("Пицца Гавайская", "Сочетание нежной ветчины с кусочками ананаса и сыром моцарелла на томатном соусе", Size, 499) {}
+
 };
 class Mushroom: public Pizza {
 public:
@@ -131,21 +135,27 @@ int main() {
         switch (pizza) {
         case 1:
             select = new Margarita(Size);
+            if (Size==30)cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;
             break;
         case 2:
             select = new Four_seasons(Size);
+            if (Size==30)cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;
             break;
         case 3:
             select = new Pepperoni(Size);
+            if (Size==35)cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;
             break;
         case 4:
             select = new Hawaiian(Size);
+            if (Size==35)cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;
             break;
         case 5:
             select = new Mushroom(Size);
+            if (Size==40)cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;
             break;
         case 6:
             select = new Four_cheeses(Size);
+            if (Size==40)cout<<"Этот размер идеален для этой пиццы! Хороший выбор!"<<endl;
             break;
         default:
             cout << "Вы неправильно ввели номер. Попробуйте снова" << endl << endl;
