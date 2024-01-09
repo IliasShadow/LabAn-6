@@ -15,7 +15,7 @@ public:
 
     void Salt() {
         unsigned int Count;
-        cout << "Введите количество соли: ";
+        cout << "Введите количество порций соли: ";
         cin >> Count;
         salt = Count;
         Prise += 2*Count;
@@ -23,7 +23,7 @@ public:
     }
     void Cheese() {
         unsigned int Count;
-        cout << "Введите количество сыра: ";
+        cout << "Введите количество порций сыра: ";
         cin >> Count;
         cheese = Count;
         Prise  += 5*Count;
